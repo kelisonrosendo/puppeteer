@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coleta de Dados Olx</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+
+<body> 
+
+  <style>
+    img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+    }
+  </style>
+
+  <div class="container">
+    <div class="row mt-4"></div>    
+  </div>
+
+  <script>
+
+    (async () => {
+      const response = await fetch('./adList.json');
+      const data = await response.json();
+
+      const htmlList = data
+        .map(({ link, img, title }) =>
+          ` <div class="col-lg-4 mb-4">
+              <div class="card" >
+                <img src="${img}" class="card-img-top" alt="${title}">
+                <div class="card-body">
+                  <a href="${link}" target="_blank">
+                    <p class="card-text text-uppercase">${title}</p>
+                  </a>
+                </div>
+              </div>
+            </div>
+          `)
+        .join('');
+
+      document.querySelector('.container .row').innerHTML = htmlList;
+    })();
+
+  </script>
+
+</body>
+
+</html>

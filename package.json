@@ -1,0 +1,22 @@
+{
+  "name": "bot-puppeteer",
+  "version": "1.0.0",
+  "description": "Coleta de dados utilizando puppeteer",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kelisonrosendo/puppeteer.git"
+  },
+  "author": "Kélison",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kelisonrosendo/puppeteer/issues"
+  },
+  "homepage": "https://github.com/kelisonrosendo/puppeteer#readme",
+  "dependencies": {
+    "puppeteer": "^5.2.1"
+  }
+}
